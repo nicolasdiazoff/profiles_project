@@ -78,8 +78,16 @@ WSGI_APPLICATION = 'profiles_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'profile_project',
+        'USER': 'root',
+        'PASSWORD': '123456_ultra_secure_password',
+        'HOST': 'mysql',
+        'PORT': '3306',
+        'default-character-set': 'utf8',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 

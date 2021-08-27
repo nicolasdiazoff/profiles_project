@@ -23,11 +23,11 @@ class UserProfileManager(BaseUserManager):
         return user
 
 class UserProfile(AbstractBaseUser, PermissionsMixin):
-    email= models.EmailField(max_length=255, unique=True)
-    name= models.CharField(max_length=255)
+    email = models.EmailField(max_length=255, unique=True)
+    name = models.CharField(max_length=255)
     is_active= models.BooleanField(default=False)
 
-    object= UserProfileManager()
+    object = UserProfileManager()
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["name"]
